@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a484e2223dcce3cc58f864c512267f46 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a484e2223dcce3cc58f864c512267f46" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a484e2223dcce3cc58f864c512267f46 = L.map(
+                "map_a484e2223dcce3cc58f864c512267f46",
+                {
+                    center: [-22.9267, -43.2647],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 25,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_01762b7a99f9ca5856d313f459eda31b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_01762b7a99f9ca5856d313f459eda31b.addTo(map_a484e2223dcce3cc58f864c512267f46);
+        
+    
+            var marker_5dc4ac2925fabca41c4f2ac0d399c1fb = L.marker(
+                [-22.9267, -43.2647],
+                {
+}
+            ).addTo(map_a484e2223dcce3cc58f864c512267f46);
+        
+    
+            var icon_aaaf3ff2ca45f9b91e5dfa149647d6f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "fa-solid fa-water",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_09d0ed1ee423f6fc978d56ba26cd2c17 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_38f6f49dd3643e373f2597df7866f4bd = $(`<div id="html_38f6f49dd3643e373f2597df7866f4bd" style="width: 100.0%; height: 100.0%;"><b>Sensor 0039</b><br>Status: OK</div>`)[0];
+                popup_09d0ed1ee423f6fc978d56ba26cd2c17.setContent(html_38f6f49dd3643e373f2597df7866f4bd);
+            
+        
+
+        marker_5dc4ac2925fabca41c4f2ac0d399c1fb.bindPopup(popup_09d0ed1ee423f6fc978d56ba26cd2c17)
+        ;
+
+        
+    
+    
+            marker_5dc4ac2925fabca41c4f2ac0d399c1fb.bindTooltip(
+                `<div>
+                     Clique aqui
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5dc4ac2925fabca41c4f2ac0d399c1fb.setIcon(icon_aaaf3ff2ca45f9b91e5dfa149647d6f1);
+            
+</script>
+</html>
