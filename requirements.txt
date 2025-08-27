@@ -4,5 +4,4 @@ pandas
 plotly.express
 datetime
 sqlalchemy
-importlib.util
 gunicorn
