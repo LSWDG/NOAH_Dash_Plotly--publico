@@ -1,0 +1,186 @@
+.div-cabecalho {
+    width: 100%; /* Garante que o cabeçalho ocupe toda a largura */
+    display: flex;
+    flex-direction: row; /* Garante que seja da esquerda pra direita */
+    align-items: center;
+    gap: 20px;
+    background-color: #173358;
+    padding: 15px 20px;
+    /* border: 1px solid red; */
+}
+
+.content{
+    /* display: flex; */
+    background-color: #173358;
+}
+
+.logo {
+    width: 400px;
+    height: auto;
+    margin: 0;
+    display: block;
+    background-color: #173358;
+    /* border: 1px solid red; */
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.H1 {
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    margin: 0;
+    margin-left: 30px;
+    text-shadow: 3px 3px 3px #aaa;
+}
+
+.P {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+.card-header{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card-text {
+  color: #ffffff;
+  margin-bottom: 7.5px;
+  display: block;
+}
+
+.card-title {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 7.5px;
+}
+
+.custom-box {
+    background-color: #057381;
+    border-radius: 20px;
+    padding: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.div-cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; /* Garante que seja da esquerda pra direita */
+    align-items: center;
+    gap: 20px;
+    background-color: #173358;
+    padding: 20px;
+    /* border: 1px solid red; */
+}
+
+.card-custom {
+    background-color: #20497e;
+    border: 1px solid #ffffff; /* (1px dashed gray;  tracejada) / border: 1px dotted black; pontilhada */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card-custom:hover {
+    transform: scale(1.03);
+    background-color: #2522c4;
+    cursor: pointer;
+}
+
+/* Aplica a todos os cards - dbc.Card já tem a classe .card automaticamente (não precisa mexer no style de cada card */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);                    /* Levanta o card */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);                  /* Sombra mais intensa */
+    background: linear-gradient(145deg, #26d116, #08fa00);  /* Sombra gradiente */
+    cursor: pointer;                                            /* Mãozinha */
+} 
+
+.app-container {
+    background-color: #173358;
+    min-height: 100vh;
+}
+
+.nav-link-custom {
+    color: white !important;
+    margin: 5px 0;
+    border-radius: 5px !important;
+}
+
+.nav-link-custom:hover {
+    background-color: #20497e !important;
+}
+
+.nav-link-custom.active {
+    background-color: #2522c4 !important;
+    font-weight: bold;
+}
+
+/* Ajuste para o conteúdo quando menu aberto */
+.offcanvas-start ~ #page-content {
+    margin-left: 300px !important;
+}
+
+/* #open-offcanvas:hover, #open-offcanvas:focus {
+    background-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+} */
+
+#open-offcanvas {
+    margin: 0 !important;
+    padding: 10px !important;
+    background: transparent !important;
+    border: none !important;
+    color: white !important;
+    font-size: 24px !important;
+    transition: color 0.3s ease !important;
+}
+
+#open-offcanvas:hover {
+    color: #008fbe !important;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+    .div-cabecalho .col > div:first-child {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+    
+    .div-cabecalho img {
+        margin: 10px 0 !important;
+    }
+    
+    .H1 {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.submenu-link {
+    color: #008fbe !important; /* amarelo dourado */
+    font-weight: 500;
+}
+
+.submenu-link:hover {
+    color: #FFA500 !important; /* laranja no hover */
+}
