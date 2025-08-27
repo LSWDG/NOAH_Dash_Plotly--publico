@@ -5,5 +5,7 @@ plotly.express
 datetime
 sqlalchemy
 pyodbc
+folium
 gunicorn
+
 
