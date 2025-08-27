@@ -8,7 +8,6 @@ import plotly.express as px
 from datetime import datetime
 from sqlalchemy import create_engine
 import urllib
-import importlib.util
 
 # ========== CONFIGURAÇÃO DE CORES DINÂMICAS ==========
 # Este dicionário contém os limites para determinar as cores dos indicadores
@@ -734,3 +733,4 @@ def atualizar_valores(n):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
