@@ -366,6 +366,9 @@ app = Dash(__name__, suppress_callback_exceptions=True, external_stylesheets=[
 ])
 app.title = "Dados dos Sensores do NOAH"
 
+# Usado para fazer o DEPLOY no render.com
+server = app.server
+
 # === LAYOUT PRINCIPAL ===
 app.layout = html.Div([
     dcc.Interval(id='interval-atualizacao', interval=20*1000, n_intervals=0),
@@ -733,4 +736,5 @@ def atualizar_valores(n):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
