@@ -4,4 +4,6 @@ pandas
 plotly.express
 datetime
 sqlalchemy
+pyodbc
 gunicorn
+
