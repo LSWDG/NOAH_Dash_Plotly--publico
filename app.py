@@ -100,7 +100,9 @@ params = urllib.parse.quote_plus(
     "UID=user_nivel_rio;"             
     "PWD=nra2bLcpRbb03O1"             
 )
-engine = create_engine(f"mssql+pyodbc:///?odbc_connect={params}")
+# engine = create_engine(f"mssql+pyodbc:///?odbc_connect={params}")
+engine = create_engine(f"mssql+pymssql://{user_nivel_rio}:{nra2bLcpRbb03O1}@{10.5.232.43}:{1433}/{NivelRios}")
+
 
 # === DEFINIÇÃO DE QUERIES SQL ===
 query_ultimos = """
@@ -736,5 +738,6 @@ def atualizar_valores(n):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
