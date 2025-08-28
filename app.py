@@ -94,7 +94,7 @@ def get_cor(valor, sensor_id, tipo="COTA"):
 
 # === CONFIGURAÇÃO DA CONEXÃO COM O BANCO DE DADOS ===
 params = urllib.parse.quote_plus(
-    "DRIVER={ODBC Driver 18 for SQL Server};"
+    "DRIVER={ODBC Driver 17 for SQL Server};"
     "SERVER=100.99.92.30,1433;"  # IP Tailscale do Windows Server
     "DATABASE=NivelRios;"
     "UID=user_nivel_rio;"
@@ -744,6 +744,7 @@ def atualizar_valores(n):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
