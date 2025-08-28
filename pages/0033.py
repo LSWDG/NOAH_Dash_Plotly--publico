@@ -58,14 +58,32 @@ def get_cor(valor, sensor_id, tipo="COTA"):
         print(f"Erro em get_cor: {str(e)}")
         return "#FFFFFF"
 
-# Configuração da conexão com o banco (mesma do app.py)
+# # Configuração da conexão com o banco (mesma do app.py)
+# params = urllib.parse.quote_plus(
+#     "DRIVER={ODBC Driver 17 for SQL Server};"
+#     "SERVER=10.5.232.43;"             
+#     "DATABASE=NivelRios;"             
+#     "UID=user_nivel_rio;"             
+#     "PWD=nra2bLcpRbb03O1"             
+# )
+# engine = create_engine(f"mssql+pyodbc:///?odbc_connect={params}")
+
+# === CONFIGURAÇÃO DA CONEXÃO COM O BANCO DE DADOS ===
+DB_HOST = os.environ.get("DB_HOST")
+DB_PORT = os.environ.get("DB_PORT", "1433")
+DB_NAME = os.environ.get("DB_NAME")
+DB_USER = os.environ.get("DB_USER")
+DB_PASS = os.environ.get("DB_PASS")
+
 params = urllib.parse.quote_plus(
-    "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=10.5.232.43;"             
-    "DATABASE=NivelRios;"             
-    "UID=user_nivel_rio;"             
-    "PWD=nra2bLcpRbb03O1"             
+    f"DRIVER={{ODBC Driver 18 for SQL Server}};"
+    f"SERVER={DB_HOST},{DB_PORT};"
+    f"DATABASE={DB_NAME};"
+    f"UID={DB_USER};"
+    f"PWD={DB_PASS};"
+    f"Encrypt=no;"
 )
+
 engine = create_engine(f"mssql+pyodbc:///?odbc_connect={params}")
 
 # Query para dados históricos do sensor específico
@@ -448,4 +466,5 @@ def update_sensor_0033(n):
         
     except Exception as e:
         print(f"Erro ao atualizar sensor 0033: {str(e)}")
+
         return "Erro", "Erro", "Erro", "Erro", {}, {}, f"Erro: {str(e)}"
