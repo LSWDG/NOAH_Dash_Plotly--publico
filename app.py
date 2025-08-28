@@ -96,18 +96,18 @@ def get_cor(valor, sensor_id, tipo="COTA"):
 params = urllib.parse.quote_plus(
     "DRIVER={ODBC Driver 18 for SQL Server};"
     "SERVER=100.99.92.30,1433;"  # IP Tailscale do Windows Server
-    "DATABASE=MeuBanco;"
-    "UID=usuario_sql;"
-    "PWD=senha_sql;"
+    "DATABASE=NivelRios;"
+    "UID=user_nivel_rio;"
+    "PWD=nra2bLcpRbb03O1;"
     "Encrypt=no;"           
 )
 
 engine = create_engine("mssql+pyodbc:///?odbc_connect=%s" % params)
 
-# engine = create_engine(f"mssql+pyodbc:///?odbc_connect={params}")
-UID = "user_nivel_rio"             
-PWD = "nra2bLcpRbb03O1" 
-engine = create_engine(f"mssql+pymssql://{UID}:{PWD}@10.5.232.43:1433/NivelRios")
+# Conexão usando pymssql
+# UID = "user_nivel_rio"             
+# PWD = "nra2bLcpRbb03O1" 
+# engine = create_engine(f"mssql+pymssql://{UID}:{PWD}@10.5.232.43:1433/NivelRios")
 
 
 # === DEFINIÇÃO DE QUERIES SQL ===
@@ -744,6 +744,7 @@ def atualizar_valores(n):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
