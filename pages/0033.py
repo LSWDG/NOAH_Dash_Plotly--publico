@@ -11,6 +11,7 @@ from datetime import datetime
 from sqlalchemy import create_engine
 import urllib
 import folium
+import os
 
 # Função para colorir
 def get_cor(valor, sensor_id, tipo="COTA"):
@@ -468,3 +469,4 @@ def update_sensor_0033(n):
         print(f"Erro ao atualizar sensor 0033: {str(e)}")
 
         return "Erro", "Erro", "Erro", "Erro", {}, {}, f"Erro: {str(e)}"
+
