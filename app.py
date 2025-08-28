@@ -8,6 +8,7 @@ import plotly.express as px
 from datetime import datetime
 from sqlalchemy import create_engine
 import urllib
+import os
 
 # ========== CONFIGURAÇÃO DE CORES DINÂMICAS ==========
 # Este dicionário contém os limites para determinar as cores dos indicadores
@@ -93,16 +94,23 @@ def get_cor(valor, sensor_id, tipo="COTA"):
 
 
 # === CONFIGURAÇÃO DA CONEXÃO COM O BANCO DE DADOS ===
+DB_HOST = os.environ.get("DB_HOST")
+DB_PORT = os.environ.get("DB_PORT", "1433")
+DB_NAME = os.environ.get("DB_NAME")
+DB_USER = os.environ.get("DB_USER")
+DB_PASS = os.environ.get("DB_PASS")
+
 params = urllib.parse.quote_plus(
-    "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=100.99.92.30,1433;"  # IP Tailscale do Windows Server
-    "DATABASE=NivelRios;"
-    "UID=user_nivel_rio;"
-    "PWD=nra2bLcpRbb03O1;"
-    "Encrypt=no;"           
+    f"DRIVER={{ODBC Driver 18 for SQL Server}};"
+    f"SERVER={DB_HOST},{DB_PORT};"
+    f"DATABASE={DB_NAME};"
+    f"UID={DB_USER};"
+    f"PWD={DB_PASS};"
+    f"Encrypt=no;"
 )
 
-engine = create_engine("mssql+pyodbc:///?odbc_connect=%s" % params)
+engine = create_engine(f"mssql+pyodbc:///?odbc_connect={params}")
+
 
 # Conexão usando pymssql
 # UID = "user_nivel_rio"             
@@ -744,6 +752,7 @@ def atualizar_valores(n):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
